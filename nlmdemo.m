@@ -7,7 +7,7 @@ pathForImages ='';
 % imageName = 'peppers.png';
 % imageName = 'lena.png'
 imageName = 'boat.png';
-[X,pp]=imread(strcat([pathForImages,imageName]));
+[X,pp]=imread(strcat([pathForImages,imageName])); % pp not needed here
 X=im2double(X);
 if (length(size(X))>2)
     X = rgb2gray(X);
