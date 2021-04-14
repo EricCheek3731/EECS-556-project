@@ -32,6 +32,7 @@ S = 11;
 sigma_h = 0.55*sigma
 
 %% Non-local Means Filter
+% get gpuTime
 tic
 Xhat = nlm_filter2D(Y,P,S,sigma_h);
 cpuTime=toc
