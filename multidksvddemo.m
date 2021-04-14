@@ -73,6 +73,10 @@ for i = 1:length(idx)
     end
 end
 
+PSNRIn1 = 20*log10(255/sqrt(mean((Yc1(:)-Xc1(:)).^2)));
+PSNRIn2 = 20*log10(255/sqrt(mean((Yc2(:)-Xc2(:)).^2)));
+PSNRIn3 = 20*log10(255/sqrt(mean((Yc3(:)-Xc3(:)).^2)));
+
 Xc1 = zeros(size(Y));
 Xc2 = zeros(size(Y));
 Xc3 = zeros(size(Y));
@@ -91,19 +95,19 @@ end
 [Xhat1,output1] = denoiseImageKSVD(Yc1, sigma,K);
 [Xhat2,output2] = denoiseImageKSVD(Yc2, sigma,K);
 [Xhat3,output3] = denoiseImageKSVD(Yc3, sigma,K);
-% Xhat = Xhat1 + Xhat2 + Xhat3;
-Xhat = zeros(size(Y));
-for i = 1:length(idx)
-    if cMat(rows(i), cols(i)) == 2 % texture white
-        Xhat(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Xhat2(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
-    else
-      if cMat(rows(i), cols(i)) == 3 % edge grey
-        Xhat(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Xhat3(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
-      else
-        Xhat(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Xhat1(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);  
-      end
-    end
-end
+Xhat = Xhat1 + Xhat2 + Xhat3;
+% Xhat = zeros(size(Y));
+% for i = 1:length(idx)
+%     if cMat(rows(i), cols(i)) == 2 % texture white
+%         Xhat(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Xhat2(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
+%     else
+%       if cMat(rows(i), cols(i)) == 3 % edge grey
+%         Xhat(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Xhat3(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
+%       else
+%         Xhat(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Xhat1(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);  
+%       end
+%     end
+% end
 %% Output PSNR Computation
 PSNROut1 = 20*log10(255/sqrt(mean((Xhat1(:)-Xc1(:)).^2)));
 PSNROut2 = 20*log10(255/sqrt(mean((Xhat2(:)-Xc2(:)).^2)));
@@ -125,6 +129,9 @@ figure('Name', strcat(['Clean Image c3, ',num2str(PSNROut3),'dB'])),imshow(Xhat2
 
 %% Print PSNR
 fprintf('PSNRIn=%f\n', PSNRIn);
+fprintf('PSNRIn1=%f\n', PSNRIn1);
+fprintf('PSNRIn2=%f\n', PSNRIn2);
+fprintf('PSNRIn3=%f\n', PSNRIn3);
 fprintf('PSNROut=%f\n', PSNROut);
 fprintf('PSNROut1=%f\n', PSNROut1);
 fprintf('PSNROut2=%f\n', PSNROut2);
