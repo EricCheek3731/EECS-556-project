@@ -63,22 +63,52 @@ Yc2 = zeros(size(Y));
 Yc3 = zeros(size(Y));
 for i = 1:length(idx)
     if cMat(rows(i), cols(i)) == 2 % texture white
-        Yc1(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Y(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
+        Yc2(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Y(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
     else
       if cMat(rows(i), cols(i)) == 3 % edge grey
-        Yc2(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Y(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
+        Yc3(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Y(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
       else
-        Yc3(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Y(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);  
+        Yc1(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Y(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);  
       end
     end
 end
 
+Xc1 = zeros(size(Y));
+Xc2 = zeros(size(Y));
+Xc3 = zeros(size(Y));
+for i = 1:length(idx)
+    if cMat(rows(i), cols(i)) == 2 % texture white
+        Xc2(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = X(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
+    else
+      if cMat(rows(i), cols(i)) == 3 % edge grey
+        Xc3(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = X(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
+      else
+        Xc1(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = X(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);  
+      end
+    end
+end
 %% KSVD method
 [Xhat1,output1] = denoiseImageKSVD(Yc1, sigma,K);
 [Xhat2,output2] = denoiseImageKSVD(Yc2, sigma,K);
 [Xhat3,output3] = denoiseImageKSVD(Yc3, sigma,K);
-Xhat = Xhat1 + Xhat2 + Xhat3;
+% Xhat = Xhat1 + Xhat2 + Xhat3;
+Xhat = zeros(size(Y));
+for i = 1:length(idx)
+    if cMat(rows(i), cols(i)) == 2 % texture white
+        Xhat(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Xhat2(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
+    else
+      if cMat(rows(i), cols(i)) == 3 % edge grey
+        Xhat(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Xhat3(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
+      else
+        Xhat(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = Xhat1(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);  
+      end
+    end
+end
 %% Output PSNR Computation
+PSNROut1 = 20*log10(255/sqrt(mean((Xhat1(:)-Xc1(:)).^2)));
+PSNROut2 = 20*log10(255/sqrt(mean((Xhat2(:)-Xc2(:)).^2)));
+PSNROut3 = 20*log10(255/sqrt(mean((Xhat3(:)-Xc3(:)).^2)));
+
 PSNROut = 20*log10(255/sqrt(mean((Xhat(:)-X(:)).^2)));
 
 %% Image Display
@@ -86,9 +116,16 @@ figure('Name','Original clean image'),imshow(X,[],'border','tight')
 figure('Name',strcat(['Noisy image, ',num2str(PSNRIn),'dB'])),imshow(Y,[],'border', 'tight')
 figure('Name',strcat(['Clean Image by Adaptive dictionary, ',num2str(PSNROut),'dB'])),imshow(Xhat,[],'border','tight')
 
+figure('Name', strcat(['Clean Image c1, ',num2str(PSNROut1),'dB'])),imshow(Xhat3,[],'border','tight')
+figure('Name', strcat(['Clean Image c2, ',num2str(PSNROut2),'dB'])),imshow(Xhat1,[],'border','tight')
+figure('Name', strcat(['Clean Image c3, ',num2str(PSNROut3),'dB'])),imshow(Xhat2,[],'border','tight')
+
 % figure('Name','The dictionary trained on patches from the noisy image'),
 % I = displayDictionaryElementsAsImage(output.D, floor(sqrt(K)), floor(size(output.D,2)/floor(sqrt(K))),bb,bb);
 
 %% Print PSNR
 fprintf('PSNRIn=%f\n', PSNRIn);
 fprintf('PSNROut=%f\n', PSNROut);
+fprintf('PSNROut1=%f\n', PSNROut1);
+fprintf('PSNROut2=%f\n', PSNROut2);
+fprintf('PSNROut3=%f\n', PSNROut3);
