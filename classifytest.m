@@ -7,9 +7,9 @@ bb=8; % block size
 
 %% Read Test Images
 pathForImages ='';
-% imageName = 'barbara.png';
+imageName = 'barbara.png';
 % imageName = 'peppers.png';
-imageName = 'lena.png';
+% imageName = 'lena.png';
 % imageName = 'boat.png';
 [X,pp]=imread(strcat([pathForImages,imageName]));
 X=im2double(X);
@@ -38,8 +38,8 @@ Y=X+sigma*randn(size(X));
 % [rows,cols] = ind2sub(size(idxMat),idx);
 % for i = 1:length(idx)
 %     currBlock = Y(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
-%     currVar = var(currBlock(:)); % var computes expirical variance
-% %    currVar = (1/(bb^2))* sum((currBlock(:) - mean(currBlock(:))).^2);
+% %    currVar = var(currBlock(:)); % var computes expirical variance
+%    currVar = (1/(bb^2))* sum((currBlock(:) - mean(currBlock(:))).^2);
 %     if currVar < thrVar % smooth
 %         cMat(rows(i), cols(i)) = 1;
 %     else
@@ -93,8 +93,7 @@ idx = find(idxMat);
 [rows,cols] = ind2sub(size(idxMat),idx);
 for i = 1:length(idx)
     currBlock = Y(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
-    currVar = var(currBlock(:)); % var computes expirical variance
-%    currVar = (1/(bb^2))* sum((currBlock(:) - mean(currBlock(:))).^2);
+    currVar = (1/(bb^2))* sum((currBlock(:) - mean(currBlock(:))).^2);
     if currVar < thrVar % smooth
         cMat(rows(i), cols(i)) = 1;
     else
@@ -113,12 +112,32 @@ end
 
 Yc = zeros(size(Y));
 for i = 1:length(idx)
-    if cMat(rows(i), cols(i)) == 2
+    if cMat(rows(i), cols(i)) == 2 % texture white
         Yc(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = 255*ones(bb, bb);
     else
-      if cMat(rows(i), cols(i)) == 3
+      if cMat(rows(i), cols(i)) == 3 % edge grey
         Yc(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = 127*ones(bb, bb);
+      else
+        Yc(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = 63*ones(bb, bb);  
       end
     end
 end
- figure('Name','Yc'),imshow(Yc,[],'border','tight')       
+figure('Name','Original clean image'),imshow(X,[],'border','tight')
+figure('Name','Yc'),imshow(Yc,[],'border','tight')       
+% Yc1 = zeros(size(Y));
+% Yc2 = zeros(size(Y));
+% Yc3 = zeros(size(Y));
+% for i = 1:length(idx)
+%     if cMat(rows(i), cols(i)) == 2
+%         Yc2(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = 255*ones(bb, bb);
+%     else
+%       if cMat(rows(i), cols(i)) == 3
+%         Yc3(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = 255*ones(bb, bb);
+%       else
+%         Yc1(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = 255*ones(bb, bb);  
+%       end
+%     end
+% end
+% figure('Name','Yc1'),imshow(Yc1,[],'border','tight')  
+% figure('Name','Yc2'),imshow(Yc2,[],'border','tight')  
+% figure('Name','Yc3'),imshow(Yc3,[],'border','tight')  
