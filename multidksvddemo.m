@@ -28,7 +28,8 @@ Y=X+sigma*randn(size(X));
 PSNRIn = 20*log10(255/sqrt(mean((Y(:)-X(:)).^2)));
 
 %==========================================================================
-%   P E R F O R M   D E N O I S I N G   U S I N G   A   D I C T  I O N A R Y
+%   P E R F O R M   D E N O I S I N G   U S I N G   T H R E E   D I C T  I O N
+%   A R I E S
 %                  T R A I N E D   O N   N O I S Y   I M A G E
 %==========================================================================
 thrVar = 600; % properthreshold ?
