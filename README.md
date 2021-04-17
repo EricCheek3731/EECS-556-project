@@ -21,7 +21,7 @@ Matlab
 
 > The result of multiple dictionaries KSVD on boat image with noise level sigma = 20 and sigma = 50 shown below.
 
-<img width="150" height="150" src="./result/boat.png"><img width="150" height="150" src="./result/boat_noise20.jpg"><img width="150" height="150" src="./result/multid.jpg">
+<img width="150" height="150" src="./result/boat.png"><img width="150" height="150" src="./result/boat_noise20.jpg"><img width="150" height="150" src="./result/multid20.jpg">
 
 Original image, noisy image with sigma = 20 and denoised image.
 
