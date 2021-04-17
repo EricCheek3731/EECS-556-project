@@ -1,1 +1,34 @@
-# EECS-556-project
+# Image Denoising Via Sparse and Redundant Dictionary Learning and Non-Local Means Filter
+
+# Introduction
+
+> In this project, we mainly focus on removing the additive zero-mean white and homogeneous Gaussian noise from given images. We investigate KSVD and non-local means methods and make extensions by using multiple dictionaries on **preclassified image patches** and adding **non-local regularization** to optimization task.
+
+# Software
+Matlab
+
+# Demo
+
+> We test classifying image patches using [classifytest.m](./classifytest.m).
+
+> The KSVD method with multiple dictionaries based on patch classification is implemented in [multidksvddemo.m](./multidksvddemo.m). The KSVD method with non-local means regularization is implemented in ?. The KSVD method with both patch classification and non-local means regularization is implemented in ?.
+
+# Results
+
+The result of patch classification on lena image is shown below.
+
+<img width="150" height="150" src="./result/lena.png"><img width="150" height="150" src="./result/lena_block.jpg">
+
+The result of multiple dictionaries KSVD on boat image with noise level sigma = 20 is shown below.
+
+<img width="150" height="150" src="./result/boat.png"><img width="150" height="150" src="./result/boat_noise20.jpg"><img width="150" height="150" src="./result/multid.jpg">
+
+The result of testing on boat image is shown below.
+
+| PSNR | Original | Noisy image | KSVD |non-local means |Multiple dictionary on preclassified patch| Non-local means regularization| Both
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| sigma = 20 |? | 22.1dB | 30.4dB | 26.8dB | ?| ?| ?|
+| sigma = 50 |? | 14.1dB | 25.9dB | 22.5dB | ?| ?| ?|
+# Analysis
+
+> Our extentions fail to improve the performance of image denoising.:cold_sweat:
