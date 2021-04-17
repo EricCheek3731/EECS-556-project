@@ -15,20 +15,26 @@ Matlab
 
 # Results
 
-The result of patch classification on lena image is shown below.
+> The result of patch classification on lena image is shown below.
 
 <img width="150" height="150" src="./result/lena.png"><img width="150" height="150" src="./result/lena_block.jpg">
 
-The result of multiple dictionaries KSVD on boat image with noise level sigma = 20 is shown below.
+> The result of multiple dictionaries KSVD on boat image with noise level sigma = 20 and sigma = 50 shown below.
 
 <img width="150" height="150" src="./result/boat.png"><img width="150" height="150" src="./result/boat_noise20.jpg"><img width="150" height="150" src="./result/multid.jpg">
 
-The result of testing on boat image is shown below.
+Original image, noisy image with sigma = 20 and denoised image.
+
+<img width="150" height="150" src="./result/boat.png"><img width="150" height="150" src="./result/boat_noise50.jpg"><img width="150" height="150" src="./result/multid50.jpg">
+
+Original image, noisy image with sigma = 50 and denoised image.
+
+> The result of testing on boat image is shown below.
 
 | PSNR | Original | Noisy image | KSVD |non-local means |Multiple dictionary on preclassified patch| Non-local means regularization| Both
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| sigma = 20 |? | 22.1dB | 30.4dB | 26.8dB | ?| ?| ?|
-| sigma = 50 |? | 14.1dB | 25.9dB | 22.5dB | ?| ?| ?|
+| ------------- | :-------------: | :-------------: | :-------------: | :-------------: | :------------: | :-------------: | :-------------: |
+| sigma = 20 |22.1dB | ? dB | 30.4dB | 26.8dB | 29.2dB| ?dB| ?dB|
+| sigma = 50 |12.1dB | ? dB | 25.9dB | 22.5dB | 24.5dB| ?dB| ?dB|
 # Analysis
 
 > Our extentions fail to improve the performance of image denoising.:cold_sweat:
