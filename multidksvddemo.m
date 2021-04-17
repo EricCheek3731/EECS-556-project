@@ -1,6 +1,6 @@
 clear
 bb=8; % block size
-RR=4; % redundancy factor
+RR=5; % redundancy factor
 K=RR*bb^2; % number of atoms in the dictionary
 
 %% Read Test Images
@@ -73,10 +73,6 @@ for i = 1:length(idx)
     end
 end
 
-PSNRIn1 = 20*log10(255/sqrt(mean((Yc1(:)-Xc1(:)).^2)));
-PSNRIn2 = 20*log10(255/sqrt(mean((Yc2(:)-Xc2(:)).^2)));
-PSNRIn3 = 20*log10(255/sqrt(mean((Yc3(:)-Xc3(:)).^2)));
-
 Xc1 = zeros(size(Y));
 Xc2 = zeros(size(Y));
 Xc3 = zeros(size(Y));
@@ -91,10 +87,16 @@ for i = 1:length(idx)
       end
     end
 end
+PSNRIn1 = 20*log10(255/sqrt(mean((Yc1(:)-Xc1(:)).^2)));
+PSNRIn2 = 20*log10(255/sqrt(mean((Yc2(:)-Xc2(:)).^2)));
+PSNRIn3 = 20*log10(255/sqrt(mean((Yc3(:)-Xc3(:)).^2)));
 %% KSVD method
 [Xhat1,output1] = denoiseImageKSVD(Yc1, sigma,K);
 [Xhat2,output2] = denoiseImageKSVD(Yc2, sigma,K);
 [Xhat3,output3] = denoiseImageKSVD(Yc3, sigma,K);
+% [Xhat1,output1] = denoiseImageKSVD2(Yc1, cMat==1, sigma,K);
+% [Xhat2,output2] = denoiseImageKSVD2(Yc2, cMat==2, sigma,K);
+% [Xhat3,output3] = denoiseImageKSVD2(Yc3, cMat==3, sigma,K);
 Xhat = Xhat1 + Xhat2 + Xhat3;
 % Xhat = zeros(size(Y));
 % for i = 1:length(idx)
