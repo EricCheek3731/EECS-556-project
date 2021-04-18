@@ -176,7 +176,6 @@ end
 errT = sigma*C;
 IMout=zeros(NN1,NN2);
 Weight=zeros(NN1,NN2);
-%blocks = im2col(Image,[NN1,NN2],[bb,bb],'sliding');
 
 % decide slidingDis based on maxBlocksToConsider
 while (prod(floor((size(Image)-bb)/slidingDis)+1)>maxBlocksToConsider)
