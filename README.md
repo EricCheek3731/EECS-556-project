@@ -31,10 +31,10 @@ Original image, noisy image with sigma = 50 and denoised image.
 
 > The result of testing on boat image is shown below.
 
-| PSNR | Original | Noisy image | KSVD |non-local means |Multiple dictionary on preclassified patch| Non-local means regularization| Both
-| ------------- | :-------------: | :-------------: | :-------------: | :-------------: | :------------: | :-------------: | :-------------: |
-| sigma = 20 |22.1dB | ? dB | 30.4dB | 26.8dB | 29.2dB| ?dB| ?dB|
-| sigma = 50 |12.1dB | ? dB | 25.9dB | 22.5dB | 24.5dB| ?dB| ?dB|
+| PSNR | Noisy image | KSVD |non-local means |Multiple dictionary on preclassified patch| Non-local means regularization| Both
+| ------------- | :-------------: | :-------------: | :-------------: | :------------: | :-------------: | :-------------: |
+| sigma = 20 |22.1dB  | 30.4dB | 26.8dB | 29.2dB| ?dB| ?dB|
+| sigma = 50 |12.1dB  | 25.9dB | 22.5dB | 24.5dB| ?dB| ?dB|
 # Analysis
 
 > Our extentions fail to improve the performance of image denoising.:cold_sweat:
