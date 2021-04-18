@@ -46,8 +46,7 @@ for i = 1:length(idx)
     if currVar < thrVar % smooth
         cMat(rows(i), cols(i)) = 1;
     else
-        %         dx = conv2([1 -1], currBlock);
-        %         dy = conv2([1; -1], currBlock);
+        %    set up gradient field
         % get filter length
         filterExtent = ceil(4*sigma);
         x = -filterExtent:filterExtent;
@@ -108,7 +107,7 @@ for i = 1:length(idx)
     else
       if cMat(rows(i), cols(i)) == 3 % edge gray
         Xc3(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = X(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
-      else
+      else % smooth 
         Xc1(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = X(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);  
       end
     end
