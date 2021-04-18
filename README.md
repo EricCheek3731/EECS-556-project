@@ -8,6 +8,7 @@ In this project, we mainly focus on removing the additive zero-mean white and ho
 Matlab
 
 # Demo
+Run:
 
 * The demo of KSVD with patch preclassification: [ksvdcdemo.m](./ksvdcdemo.m). 
   
