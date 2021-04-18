@@ -2,7 +2,7 @@
 
 # Introduction
 
-In this project, we mainly focus on removing the additive zero-mean white and homogeneous Gaussian noise from given images. We investigate KSVD and non-local means methods and make extensions by using multiple dictionaries on **preclassified image patches** and adding **non-local regularization** to optimization task.
+In this project, we mainly focus on removing the additive zero-mean white and homogeneous Gaussian noise from given images. We investigate K-SVD and non-local means methods and make extensions by using multiple dictionaries on **preclassified image patches** and adding **non-local regularization** to optimization task.
 
 # Software
 Matlab
@@ -10,11 +10,11 @@ Matlab
 # Demo
 Run:
 
-* The demo of KSVD with patch preclassification: [ksvdcdemo.m](./ksvdcdemo.m). 
+* The demo of K-SVD with patch preclassification: [ksvdcdemo.m](./ksvdcdemo.m). 
   
-* The demo of KSVD with non-local means regularization: [ksvd_nlmdemo.m](./ksvd_nlmdemo.m). 
+* The demo of K-SVD with non-local means regularization: [ksvd_nlmdemo.m](./ksvd_nlmdemo.m). 
 
-* The demo of KSVD with both patch preclassification and non-local means regularization: [ksvdc_nlm.m](./ksvd_nlmdemo.m).
+* The demo of K-SVD with both patch preclassification and non-local means regularization: [ksvdc_nlm.m](./ksvd_nlmdemo.m).
 
 Folder of other used functions: [lib](./lib) folder.
 
