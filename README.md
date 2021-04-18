@@ -70,7 +70,7 @@ The result of testing on boat image is shown below.
 Our extentions fail to improve the performance of image denoising.:cold_sweat:
 
 
-# Reference
+# Code Reference
 The code is developed based on 
 
 K-SVD: https://github.com/jbhuang0604/SelfSimSR/tree/master/Lib/KSVD
