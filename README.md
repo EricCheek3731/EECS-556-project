@@ -71,5 +71,9 @@ Our extentions fail to improve the performance of image denoising.:cold_sweat:
 
 
 # Reference
-The code is developed based on https://github.com/jbhuang0604/SelfSimSR and https://www.mathworks.com/matlabcentral/fileexchange/52018-simple-non-local-means-nlm-filter
+The code is developed based on 
+
+K-SVD: https://github.com/jbhuang0604/SelfSimSR  
+
+NLM: https://www.mathworks.com/matlabcentral/fileexchange/52018-simple-non-local-means-nlm-filter
 
