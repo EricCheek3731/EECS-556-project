@@ -180,33 +180,6 @@ while (prod(floor((size(Image)-bb)/slidingDis)+1)>maxBlocksToConsider)
     slidingDis = slidingDis+1;
 end
 
-% %%%%%%%%%%%%%%%%%%%%% without NLM %%%%%%%%%%%%%%%%%%%%%%
-% [blocks,idx] = my_im2col(Image,[bb,bb],slidingDis);
-% 
-% if (waitBarOn)
-%     newCounterForWaitBar = (param.numIteration+1)*size(blocks,2);
-% end
-% 
-% % go with jumps of 30000
-% for jj = 1:30000:size(blocks,2)
-%     if (waitBarOn)
-%         waitbar(((param.numIteration*size(blocks,2))+jj)/newCounterForWaitBar);
-%     end
-%     jumpSize = min(jj+30000-1,size(blocks,2));
-%     if (reduceDC)
-%         vecOfMeans = mean(blocks(:,jj:jumpSize));
-%         blocks(:,jj:jumpSize) = blocks(:,jj:jumpSize) - repmat(vecOfMeans,size(blocks,1),1);
-%     end
-%     
-%     Coefs = OMPerr(Dictionary,blocks(:,jj:jumpSize),errT);
-%     if (reduceDC)
-%         blocks(:,jj:jumpSize)= Dictionary*Coefs + ones(size(blocks,1),1) * vecOfMeans;
-%     else
-%         blocks(:,jj:jumpSize)= Dictionary*Coefs ;
-%     end
-% end
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %%%%%%%%%%%%%%%%%%%%% With NLM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 [blocks,idx] = my_im2col(Image,[bb,bb],slidingDis);
 
