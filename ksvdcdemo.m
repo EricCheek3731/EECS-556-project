@@ -44,9 +44,8 @@ for i = 1:length(idx)
     currVar = (1/(bb^2))* sum((currBlock(:) - mean(currBlock(:))).^2);
     if currVar < thrVar % smooth
         cMat(rows(i), cols(i)) = 1;
-    else
-        %         dx = conv2([1 -1], currBlock);
-        %         dy = conv2([1; -1], currBlock);
+    else 
+        % set up gradient field
         % get filter length
         filterExtent = ceil(4*sigma);
         x = -filterExtent:filterExtent;
@@ -75,6 +74,7 @@ for i = 1:length(idx)
         dxy = [dx(:) dy(:)];
         lamda = svd(dxy);
         r_q = lamda(1)/(lamda(1) + lamda(2));
+        
         if r_q < thrTex% texture
             cMat(rows(i), cols(i)) = 2;
         else % edge
@@ -83,6 +83,7 @@ for i = 1:length(idx)
     end
 end
 
+% color coded
 Yc1 = zeros(size(Y));
 Yc2 = zeros(size(Y));
 Yc3 = zeros(size(Y));
@@ -107,7 +108,7 @@ for i = 1:length(idx)
     else
       if cMat(rows(i), cols(i)) == 3 % edge gray
         Xc3(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = X(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);
-      else
+      else % smooth white
         Xc1(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1) = X(rows(i):rows(i)+bb-1,cols(i):cols(i)+bb-1);  
       end
     end
@@ -134,6 +135,7 @@ for i = 1:length(idx)
       end
     end
 end
+
 %% Output PSNR Computation
 PSNROut1 = 20*log10(255/sqrt(mean((Xhat1(:)-Xc1(:)).^2)));
 PSNROut2 = 20*log10(255/sqrt(mean((Xhat2(:)-Xc2(:)).^2)));
