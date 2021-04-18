@@ -22,7 +22,7 @@ Matlab
 
 * Foler of images used: [img](./img) folder.
 
-> To fun the demo, download [img](./img), [lib](./lib), [ksvdcdemo.m](./ksvdcdemo.m), [ksvd_nlmdemo.m](./ksvd_nlmdemo.m) and [ksvdc_nlm.m](./ksvd_nlmdemo.m) and put them in the same folder. The image and noise level sigma used could be changed by editing the demo files.
+> To run the demo, download [img](./img), [lib](./lib), [ksvdcdemo.m](./ksvdcdemo.m), [ksvd_nlmdemo.m](./ksvd_nlmdemo.m) and [ksvdc_nlm.m](./ksvd_nlmdemo.m) and put them in the same folder. The image and noise level sigma used could be changed by editing the demo files.
 
 # Usage
 
