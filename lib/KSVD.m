@@ -1,5 +1,5 @@
 function [Dictionary,output] = KSVD(...
-    Data,... % an nXN matrix that contins N signals (Y), each of dimension n.
+    Data,... % an n X N matrix that contins N signals (Y), each of dimension n.
     param)
 % =========================================================================
 %                          K-SVD algorithm
