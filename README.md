@@ -48,7 +48,7 @@ The result of patch classification on lena image is shown below.
 
 <img width="150" height="150" src="./img/lena.png"><img width="150" height="150" src="./result/lena_block.jpg">
 
-The result of KSVD with patch preclassification and non-local means regularization on boat image with noise level sigma = 20 and sigma = 50 shown below.
+The result of K-SVD with patch preclassification and non-local means regularization on boat image with noise level sigma = 20 and sigma = 50 shown below.
 
 <img width="150" height="150" src="./img/boat.png"><img width="150" height="150" src="./result/boat_noise20.jpg"><img width="150" height="150" src="./result/ksvdc_nlm20.jpg">
 
@@ -60,7 +60,7 @@ Original image, noisy image with sigma = 50 and denoised image.
 
 The result of testing on boat image is shown below.
 
-| PSNR | Noisy image | KSVD |Non-local means |Patch preclassification| Non-local means regularization| Both
+| PSNR | Noisy image | K-SVD |Non-local means |Patch preclassification| Non-local means regularization| Both
 | ------------- | :-------------: | :-------------: | :-------------: | :------------: | :-------------: | :-------------: |
 | sigma = 20 |22.1dB  | 30.4dB | 26.8dB | 29.2dB| 30.3dB| 29.3dB|
 | sigma = 50 |12.1dB  | 25.9dB | 22.5dB | 24.5dB| 26.0dB| 24.5dB|
