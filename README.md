@@ -7,9 +7,15 @@
 # Software
 Matlab
 
-# Usage
-Run multidksvddemo2.m
+# Demo
 
+> We test classifying image patches using [classifytest.m](./classifytest.m).
+
+> The KSVD method with multiple dictionaries based on patch classification is implemented in [multidksvddemo.m](./multidksvddemo.m). 
+> The KSVD method with non-local means regularization is implemented in ?. 
+> The KSVD method with both patch classification and non-local means regularization is implemented in ?.
+
+# Usage
 
 KSVD method:
 [Xhat,output] = multidictionaryKSVDtest(Y, sigma,K);
@@ -25,12 +31,6 @@ Output:
 > Xhat - denoised image.
 > 
 > output - parameters.
-
-# Demo
-
-> We test classifying image patches using [classifytest.m](./classifytest.m).
-
-> The KSVD method with multiple dictionaries based on patch classification is implemented in [multidksvddemo.m](./multidksvddemo.m). The KSVD method with non-local means regularization is implemented in ?. The KSVD method with both patch classification and non-local means regularization is implemented in ?.
 
 # Results
 
