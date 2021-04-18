@@ -9,9 +9,6 @@ Matlab
 
 # Demo
 
-> We test classifying image patches using [classifytest.m](./test/classifytest.m).
-> 
-
 * The demo of KSVD with patch preclassification: [ksvdcdemo.m](./ksvdcdemo.m). 
   
 * The demo of KSVD with non-local means regularization: [ksvd_nlmdemo.m](./ksvd_nlmdemo.m). 
@@ -20,9 +17,9 @@ Matlab
 
 * Folder of other functions used: [lib](./lib) folder.
 
-* Foler of images used: [img](./img) folder.
+* Folder of images used: [img](./img) folder.
 
-> To run the demo, download [img](./img), [lib](./lib), [ksvdcdemo.m](./ksvdcdemo.m), [ksvd_nlmdemo.m](./ksvd_nlmdemo.m) and [ksvdc_nlm.m](./ksvd_nlmdemo.m) and put them in the same folder. The image and noise level sigma used could be changed by editing the demo files.
+> We test classifying image patches using [classifytest.m](./test/classifytest.m). To run the demo, download [img](./img), [lib](./lib), [ksvdcdemo.m](./ksvdcdemo.m), [ksvd_nlmdemo.m](./ksvd_nlmdemo.m) and [ksvdc_nlm.m](./ksvd_nlmdemo.m) and put them in the same folder. The image and noise level sigma used could be changed by editing the demo files.
 
 # Usage
 
@@ -45,15 +42,15 @@ Output:
 
 > The result of patch classification on lena image is shown below.
 
-<img width="150" height="150" src="./result/lena.png"><img width="150" height="150" src="./result/lena_block.jpg">
+<img width="150" height="150" src="./img/lena.png"><img width="150" height="150" src="./result/lena_block.jpg">
 
 > The result of multiple dictionaries KSVD on boat image with noise level sigma = 20 and sigma = 50 shown below.
 
-<img width="150" height="150" src="./result/boat.png"><img width="150" height="150" src="./result/boat_noise20.jpg"><img width="150" height="150" src="./result/multid20.jpg">
+<img width="150" height="150" src="./img/boat.png"><img width="150" height="150" src="./result/boat_noise20.jpg"><img width="150" height="150" src="./result/multid20.jpg">
 
 Original image, noisy image with sigma = 20 and denoised image.
 
-<img width="150" height="150" src="./result/boat.png"><img width="150" height="150" src="./result/boat_noise50.jpg"><img width="150" height="150" src="./result/multid50.jpg">
+<img width="150" height="150" src="./img/boat.png"><img width="150" height="150" src="./result/boat_noise50.jpg"><img width="150" height="150" src="./result/multid50.jpg">
 
 Original image, noisy image with sigma = 50 and denoised image.
 
