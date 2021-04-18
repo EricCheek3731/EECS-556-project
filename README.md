@@ -7,6 +7,20 @@
 # Software
 Matlab
 
+# Usage
+Run multidksvddemo2.m
+
+KSVD method:
+[Xhat,output] = multidictionaryKSVDtest(Y, sigma,K);
+
+Input:
+Y - noised image
+sigma - parameter to generate noise
+K - number of atoms in the dictionary
+Output:
+Xhat - denoised image
+output - parameters
+
 # Demo
 
 > We test classifying image patches using [classifytest.m](./classifytest.m).
