@@ -24,10 +24,10 @@ We test classifying image patches using [classifytest.m](./test/classifytest.m).
 
 # Usage
 
-KSVD method:
+K-SVD method:
 [Xhat,output] = denoiseImageKSVD(Y, sigma,K);
 
-KSVD with non local regularization:
+K-SVD with non local regularization:
 [Xhat,output] = denoiseImageKSVD_nlm(Y, sigma,K);
 
 Input:
