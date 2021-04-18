@@ -24,7 +24,10 @@ Matlab
 # Usage
 
 KSVD method:
-[Xhat,output] = multidictionaryKSVDtest(Y, sigma,K);
+[Xhat,output] = denoiseImageKSVD(Y, sigma,K);
+
+KSVD with non local regularization:
+[Xhat,output] = denoiseImageKSVD_nlm(Y, sigma,K);
 
 Input:
 > Y - noised image.
