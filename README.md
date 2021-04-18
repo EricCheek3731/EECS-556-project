@@ -64,6 +64,12 @@ The result of testing on boat image is shown below.
 | ------------- | :-------------: | :-------------: | :-------------: | :------------: | :-------------: | :-------------: |
 | sigma = 20 |22.1dB  | 30.4dB | 26.8dB | 29.2dB| 30.3dB| 29.3dB|
 | sigma = 50 |12.1dB  | 25.9dB | 22.5dB | 24.5dB| 26.0dB| 24.5dB|
+
 # Analysis
 
 Our extentions fail to improve the performance of image denoising.:cold_sweat:
+
+
+# Reference
+The code is developed based on https://github.com/jbhuang0604/SelfSimSR and https://www.mathworks.com/matlabcentral/fileexchange/52018-simple-non-local-means-nlm-filter
+
