@@ -9,13 +9,20 @@ Matlab
 
 # Demo
 
-> We test classifying image patches using [classifytest.m](./classifytest.m).
-
-> The KSVD method with multiple dictionaries based on patch classification is implemented in [multidksvddemo.m](./multidksvddemo.m). 
+> We test classifying image patches using [classifytest.m](./test/classifytest.m).
 > 
-> The KSVD method with non-local means regularization is implemented in ?. 
->
-> The KSVD method with both patch classification and non-local means regularization is implemented in ?.
+
+* The demo of KSVD with patch preclassification: [ksvdcdemo.m](./ksvdcdemo.m). 
+  
+* The demo of KSVD with non-local means regularization: [ksvd_nlmdemo.m](./ksvd_nlmdemo.m). 
+
+* The demo of KSVD with both patch preclassification and non-local means regularization: [ksvdc_nlm.m](./ksvd_nlmdemo.m).
+
+* Folder of other functions used: [lib](./lib) folder.
+
+* Foler of images used: [img](./img) folder.
+
+> To fun the demo, download [img](./img), [lib](./lib), [ksvdcdemo.m](./ksvdcdemo.m), [ksvd_nlmdemo.m](./ksvd_nlmdemo.m) and [ksvdc_nlm.m](./ksvd_nlmdemo.m) and put them in the same folder. The image and noise level sigma used could be changed by editing the demo files.
 
 # Usage
 
@@ -52,10 +59,10 @@ Original image, noisy image with sigma = 50 and denoised image.
 
 > The result of testing on boat image is shown below.
 
-| PSNR | Noisy image | KSVD |non-local means |Multiple dictionary on preclassified patch| Non-local means regularization| Both
+| PSNR | Noisy image | KSVD |Non-local means |Patch preclassification| Non-local means regularization| Both
 | ------------- | :-------------: | :-------------: | :-------------: | :------------: | :-------------: | :-------------: |
-| sigma = 20 |22.1dB  | 30.4dB | 26.8dB | 29.2dB| ?dB| ?dB|
-| sigma = 50 |12.1dB  | 25.9dB | 22.5dB | 24.5dB| ?dB| ?dB|
+| sigma = 20 |22.1dB  | 30.4dB | 26.8dB | 29.2dB| 30.3dB| 29.3dB|
+| sigma = 50 |12.1dB  | 25.9dB | 22.5dB | 24.5dB| 26.0dB| 24.5dB|
 # Analysis
 
 > Our extentions fail to improve the performance of image denoising.:cold_sweat:
