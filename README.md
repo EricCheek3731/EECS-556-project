@@ -2,7 +2,7 @@
 
 # Introduction
 
-> In this project, we mainly focus on removing the additive zero-mean white and homogeneous Gaussian noise from given images. We investigate KSVD and non-local means methods and make extensions by using multiple dictionaries on **preclassified image patches** and adding **non-local regularization** to optimization task.
+In this project, we mainly focus on removing the additive zero-mean white and homogeneous Gaussian noise from given images. We investigate KSVD and non-local means methods and make extensions by using multiple dictionaries on **preclassified image patches** and adding **non-local regularization** to optimization task.
 
 # Software
 Matlab
@@ -19,7 +19,7 @@ Matlab
 
 * Folder of images used: [img](./img) folder.
 
-> We test classifying image patches using [classifytest.m](./test/classifytest.m). To run the demo, download [img](./img), [lib](./lib), [ksvdcdemo.m](./ksvdcdemo.m), [ksvd_nlmdemo.m](./ksvd_nlmdemo.m) and [ksvdc_nlm.m](./ksvd_nlmdemo.m) and put them in the same folder. The image and noise level sigma used could be changed by editing the demo files.
+We test classifying image patches using [classifytest.m](./test/classifytest.m). To run the demo, download [img](./img), [lib](./lib), [ksvdcdemo.m](./ksvdcdemo.m), [ksvd_nlmdemo.m](./ksvd_nlmdemo.m) and [ksvdc_nlm.m](./ksvd_nlmdemo.m) and put them in the same folder. The image and noise level sigma used could be changed by editing the demo files.
 
 # Usage
 
@@ -43,11 +43,11 @@ Output:
 
 # Results
 
-> The result of patch classification on lena image is shown below.
+The result of patch classification on lena image is shown below.
 
 <img width="150" height="150" src="./img/lena.png"><img width="150" height="150" src="./result/lena_block.jpg">
 
-> The result of KSVD with patch preclassification and non-local means regularization on boat image with noise level sigma = 20 and sigma = 50 shown below.
+The result of KSVD with patch preclassification and non-local means regularization on boat image with noise level sigma = 20 and sigma = 50 shown below.
 
 <img width="150" height="150" src="./img/boat.png"><img width="150" height="150" src="./result/boat_noise20.jpg"><img width="150" height="150" src="./result/ksvdc_nlm20.jpg">
 
@@ -57,7 +57,7 @@ Original image, noisy image with sigma = 20 and denoised image.
 
 Original image, noisy image with sigma = 50 and denoised image.
 
-> The result of testing on boat image is shown below.
+The result of testing on boat image is shown below.
 
 | PSNR | Noisy image | KSVD |Non-local means |Patch preclassification| Non-local means regularization| Both
 | ------------- | :-------------: | :-------------: | :-------------: | :------------: | :-------------: | :-------------: |
@@ -65,4 +65,4 @@ Original image, noisy image with sigma = 50 and denoised image.
 | sigma = 50 |12.1dB  | 25.9dB | 22.5dB | 24.5dB| 26.0dB| 24.5dB|
 # Analysis
 
-> Our extentions fail to improve the performance of image denoising.:cold_sweat:
+Our extentions fail to improve the performance of image denoising.:cold_sweat:
