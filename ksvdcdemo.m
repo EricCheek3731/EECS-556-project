@@ -148,9 +148,9 @@ figure('Name','Original clean image'),imshow(X,[],'border','tight')
 figure('Name',strcat(['Noisy image, ',num2str(PSNRIn),'dB'])),imshow(Y,[],'border', 'tight')
 figure('Name',strcat(['Clean Image by Adaptive dictionary, ',num2str(PSNROut),'dB'])),imshow(Xhat,[],'border','tight')
 
-figure('Name', strcat(['Clean Image c1, ',num2str(PSNROut1),'dB'])),imshow(Xhat3,[],'border','tight')
-figure('Name', strcat(['Clean Image c2, ',num2str(PSNROut2),'dB'])),imshow(Xhat1,[],'border','tight')
-figure('Name', strcat(['Clean Image c3, ',num2str(PSNROut3),'dB'])),imshow(Xhat2,[],'border','tight')
+% figure('Name', strcat(['Clean Image c1, ',num2str(PSNROut1),'dB'])),imshow(Xhat1,[],'border','tight')
+% figure('Name', strcat(['Clean Image c2, ',num2str(PSNROut2),'dB'])),imshow(Xhat2,[],'border','tight')
+% figure('Name', strcat(['Clean Image c3, ',num2str(PSNROut3),'dB'])),imshow(Xhat3,[],'border','tight')
 
 % figure('Name','The dictionary trained on patches from the noisy image'),
 % I = displayDictionaryElementsAsImage(output.D, floor(sqrt(K)), floor(size(output.D,2)/floor(sqrt(K))),bb,bb);
