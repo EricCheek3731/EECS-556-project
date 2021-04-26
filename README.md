@@ -87,7 +87,7 @@ Denoised images from noise level sigma = 20, 30, 40 and 50.
 
 The result of testing on boat image is shown below.
 
-| PSNR (dB) | Noisy image | K-SVD |Non-local means |Patch preclassification| Non-local means regularization| Both| OLAPK-SVD
+| PSNR (dB) | Noisy image | K-SVD |Non-local means |Patch preclassification| NLM regularization| Both| OLAPK-SVD
 | ------------- | :-------------: | :-------------: | :-------------: | :------------: | :-------------: | :-------------: | :-------------: |
 | sigma = 20 |22.1dB  | 30.4dB | 26.8dB | 29.2dB| 30.3dB| 29.3dB| 30.2dB |
 | sigma = 50 |12.1dB  | 25.9dB | 22.5dB | 24.5dB| 26.0dB| 24.5dB| 25.9dB |
