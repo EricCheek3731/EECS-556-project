@@ -81,8 +81,9 @@ Original image, noisy image with sigma = 20 and denoised image.
 
 Original image, noisy image with sigma = 50 and denoised image.
 
+<img width="150" height="150" src="./result/olap20-[30.212479].png"><img width="150" height="150" src="./result/olap30-[28.362709].png"><img width="150" height="150" src="./result/olap40-[27.052391].png"><img width="150" height="150" src="./result/olap50-[25.906834].png">
 
-Original image, noisy image with sigma = 50 and denoised image.
+Denoised images from noise level sigma = 20, 30, 40 and 50.
 
 The result of testing on boat image is shown below.
 
