@@ -44,6 +44,26 @@ Output:
 > 
 > output - parameters.
 
+K-SVD with overlapping patches classification:
+[Xhat,output] = olapKSVD(Y, sigma, K, bb, step_size)
+
+Input:
+> Y - noised image.
+> 
+> sigma - parameter to generate noise.
+> 
+> K - number of atoms in the dictionary.
+> 
+> bb - the block size.
+> 
+> step_size - the block size minus the overlapping size.
+
+Output:
+> Xhat - denoised image.
+> 
+> output - parameters.
+
+
 # Results
 
 The result of patch classification on lena image is shown below.
