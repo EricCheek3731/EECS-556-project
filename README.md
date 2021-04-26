@@ -44,6 +44,7 @@ Output:
 > 
 > output - parameters.
 
+
 K-SVD with overlapping patches classification:
 [Xhat,output] = olapKSVD(Y, sigma, K, bb, step_size)
 
@@ -77,6 +78,9 @@ The result of K-SVD with patch preclassification and non-local means regularizat
 Original image, noisy image with sigma = 20 and denoised image.
 
 <img width="150" height="150" src="./img/boat.png"><img width="150" height="150" src="./result/boat_noise50.jpg"><img width="150" height="150" src="./result/ksvdc_nlm50.jpg">
+
+Original image, noisy image with sigma = 50 and denoised image.
+
 
 Original image, noisy image with sigma = 50 and denoised image.
 
