@@ -16,11 +16,13 @@ Run:
 
 * The demo of K-SVD with both patch preclassification and non-local means regularization: [ksvdc_nlm.m](./ksvd_nlmdemo.m).
 
+* The demo of K-SVD with overlapping patch preclassification: [olap_ksvdc.m](./olap_ksvdcdemo.m).
+
 Folder of other used functions: [lib](./lib) folder.
 
 Folder of used images: [img](./img) folder.
 
-We test image patches classification using [classifytest.m](./test/classifytest.m) in [test](./test) folder. To run the demo, download [img](./img), [lib](./lib), [ksvdcdemo.m](./ksvdcdemo.m), [ksvd_nlmdemo.m](./ksvd_nlmdemo.m) and [ksvdc_nlm.m](./ksvd_nlmdemo.m) and put them in the same folder. The image and noise level sigma used could be changed by editing the demo files.
+We test image patches classification using [classifytest.m](./test/classifytest.m) in [test](./test) folder. To run the demo, download [img](./img), [lib](./lib), [ksvdcdemo.m](./ksvdcdemo.m), [ksvd_nlmdemo.m](./ksvd_nlmdemo.m), [ksvdc_nlm.m](./ksvd_nlmdemo.m) and [olap_ksvdc.m](./olap_ksvdcdemo.m) and put them in the same folder. The image and noise level sigma used could be changed by editing the demo files.
 
 # Usage
 
