@@ -5,7 +5,7 @@
 %   with function denoiseImageKSVD_nlm.m
 %============================================================
 clear
-bb=256; % block size #some power of 2 works best 
+bb=8; % block size #some power of 2 works best 
 RR=4; % redundancy factor
 K=RR*bb^2; % number of atoms in the dictionary
 
