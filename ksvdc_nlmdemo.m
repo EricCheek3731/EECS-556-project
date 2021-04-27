@@ -5,7 +5,7 @@
 %   with function denoiseImageKSVD_nlm.m
 %============================================================
 clear
-bb=8; % block size
+bb=256; % block size #some power of 2 works best 
 RR=4; % redundancy factor
 K=RR*bb^2; % number of atoms in the dictionary
 
@@ -116,9 +116,9 @@ PSNRIn1 = 20*log10(255/sqrt(mean((Yc1(:)-Xc1(:)).^2)));
 PSNRIn2 = 20*log10(255/sqrt(mean((Yc2(:)-Xc2(:)).^2)));
 PSNRIn3 = 20*log10(255/sqrt(mean((Yc3(:)-Xc3(:)).^2)));
 %% KSVD method
-[Xhat1,output1] = denoiseImageKSVD_nlm(Yc1, sigma,K);
-[Xhat2,output2] = denoiseImageKSVD_nlm(Yc2, sigma,K);
-[Xhat3,output3] = denoiseImageKSVD_nlm(Yc3, sigma,K);
+[Xhat1,output1] = denoiseImageKSVD(Yc1, sigma,K, 'BlockSize',bb);
+[Xhat2,output2] = denoiseImageKSVD(Yc2, sigma,K, 'BlockSize',bb);
+[Xhat3,output3] = denoiseImageKSVD(Yc3, sigma,K, 'BlockSize',bb);
 % Xhat = Xhat1 + Xhat2 + Xhat3;
 
 % recovery block by block
